@@ -35,9 +35,11 @@ plt.bar( ['high popularity', 'low popularity'],
          [mean_value_high['instrumentalness'], mean_value_low['instrumentalness']], color='orange', width=0.5)
 plt.ylabel('Instrumentalness')
 
+
 plt.show()
 
 #Conclusions: The higher the danceability, the higher th popularity is
 #The higher the loudness, the higher the popularity
 #The higher the energy, the more popular the track is
 #The higher the instrumentalness is, the less popular the track is
+
