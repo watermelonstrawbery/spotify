@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('dataset-spotify.csv')
+df = pd.read_csv('data/dataset-spotify.csv')
 new_df = df.dropna()
 
 #High vs. low popularity analysis
