@@ -14,4 +14,17 @@ df = df.drop(['explicit', 'key', 'mode', 'time_signature'], axis=1)
 #print(df)
 
 duplicates = df.duplicated()
-print(duplicates)
+#print(duplicates)
+
+description = df.describe()
+#print(description)
+#looks like tempo includes zero which is not reasonable
+#those rows should be deleted since they do not represent valid tempo values
+
+#157 rows included 0 in tempo
+#df = df[df['tempo'] == 0.0]
+
+#The 157 rows were filtered out
+df = df[df['tempo'] > 0.0]
+#print(df)
+print(df.describe())
