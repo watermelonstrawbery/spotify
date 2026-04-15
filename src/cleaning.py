@@ -27,4 +27,41 @@ description = df.describe()
 #The 157 rows were filtered out
 df = df[df['tempo'] > 0.0]
 #print(df)
-print(df.describe())
+#print(df.describe())
+
+
+#Feature engineering section
+
+def tempo_level(tempo):
+    tempo = float(tempo)
+    if tempo > float(142):
+        return "High tempo"
+    elif (tempo > float(71)) & (tempo < float(140)):
+        return "Medium tempo"
+    elif tempo < float(71):
+        return "Low tempo"
+
+
+def popularity_level(popularity):
+    if popularity > 66:
+        return "High"
+    elif (popularity > 33) & (popularity < 66):
+        return "Medium"
+    elif popularity < 33:
+        return "Low"
+
+def energy_level(energy):
+    energy = float(energy)
+    if energy > 0.66:
+        return "High"
+    elif (energy > 0.33) & (energy < 0.66):
+        return "Medium"
+    elif energy < 0.33:
+        return "Low"
+
+#Added a column grouping tempo levels in high, medium and low tempo
+df['tempo_level'] = df['tempo'].apply(tempo_level)
+df['popularity_level'] = df['popularity'].apply(popularity_level)
+df['energy_level'] = df['energy'].apply(energy_level)
+print(df)
+df.to_csv("../data/cleaned.csv")
