@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('data/dataset-spotify.csv')
+df = pd.read_csv('../data/dataset-spotify.csv')
 print(df.head())
 print(df.info())
 

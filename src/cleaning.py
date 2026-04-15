@@ -30,6 +30,14 @@ df = df[df['tempo'] > 0.0]
 #print(df.describe())
 
 
+def clean(data_frame):
+    data_frame = data_frame.dropna()
+    data_frame = data_frame.drop(['explicit', 'key', 'mode', 'time_signature'], axis=1)
+    data_frame = data_frame[data_frame['tempo'] > 0.0]
+    return data_frame
+
+
+
 #Feature engineering section
 
 def tempo_level(tempo):
@@ -65,3 +73,10 @@ df['popularity_level'] = df['popularity'].apply(popularity_level)
 df['energy_level'] = df['energy'].apply(energy_level)
 print(df)
 df.to_csv("../data/cleaned.csv")
+
+def add_columns(data_frame):
+    data_frame['tempo_level'] = data_frame['tempo'].apply(tempo_level)
+    data_frame['popularity_level'] = data_frame['popularity'].apply(popularity_level)
+    data_frame['energy_level'] = data_frame['energy'].apply(energy_level)
+    #data_frame.to_csv("../data/cleaned.csv")
+    return data_frame
