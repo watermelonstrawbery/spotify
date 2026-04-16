@@ -43,11 +43,11 @@ def clean(data_frame):
 def tempo_level(tempo):
     tempo = float(tempo)
     if tempo > float(142):
-        return "High tempo"
+        return "High"
     elif (tempo > float(71)) & (tempo < float(140)):
-        return "Medium tempo"
+        return "Medium"
     elif tempo < float(71):
-        return "Low tempo"
+        return "Low"
 
 
 def popularity_level(popularity):
@@ -68,15 +68,31 @@ def energy_level(energy):
         return "Low"
 
 #Added a column grouping tempo levels in high, medium and low tempo
-df['tempo_level'] = df['tempo'].apply(tempo_level)
-df['popularity_level'] = df['popularity'].apply(popularity_level)
-df['energy_level'] = df['energy'].apply(energy_level)
-print(df)
-df.to_csv("../data/cleaned.csv")
+#df['tempo_level'] = df['tempo'].apply(tempo_level)
+#df['popularity_level'] = df['popularity'].apply(popularity_level)
+#df['energy_level'] = df['energy'].apply(energy_level)
+#print(df)
+#df.to_csv("../data/cleaned.csv")
 
 def add_columns(data_frame):
     data_frame['tempo_level'] = data_frame['tempo'].apply(tempo_level)
+    data_frame['tempo_level'] = pd.Categorical(
+        data_frame['tempo_level'],
+        categories=['High', 'Medium', 'Low'],
+        ordered=True
+    )
+
     data_frame['popularity_level'] = data_frame['popularity'].apply(popularity_level)
+    data_frame['popularity_level'] = pd.Categorical(
+        data_frame['popularity_level'],
+        categories=['High', 'Medium', 'Low'],
+        ordered=True
+    )
     data_frame['energy_level'] = data_frame['energy'].apply(energy_level)
+    data_frame['energy_level'] = pd.Categorical(
+        data_frame['energy_level'],
+        categories=['High', 'Medium', 'Low'],
+        ordered=True
+    )
     #data_frame.to_csv("../data/cleaned.csv")
     return data_frame

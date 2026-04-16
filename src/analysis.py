@@ -12,12 +12,12 @@ def popularity_per_energy_level(df):
     })
     return grouped_energy
 
-def popularity(df):
-    grouped_popularity = df.groupby('popularity_level').agg({
-        'danceability': 'mean',
-        'loudness': 'mean',
-        'acousticness': 'mean',
-        'energy': 'mean',
-        'tempo': 'mean',
-    })
-    return grouped_popularity
+#def popularity(df):
+#    grouped_popularity = df.groupby('popularity_level').agg({
+      #  'danceability': 'mean',
+       # 'loudness': 'mean',
+        #'acousticness': 'mean',
+       # 'energy': 'mean',
+        #'tempo': 'mean',
+#    })
+#    return grouped_popularity

@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4c5561c-3e69-48b8-a62f-e992c5491194" name="Changes" comment="Filtering/grouping and insights done">
+    <list default="true" id="a4c5561c-3e69-48b8-a62f-e992c5491194" name="Changes" comment="pipeline done, excel file with three sheets generated">
+      <change afterPath="$PROJECT_DIR$/src/visualization.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleaning_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/cleaning_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/popularity.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/popularity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cleaned.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/cleaned.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cleaning.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/cleaning.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/statistics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tempo_and_popularity.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/tempo_and_popularity.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +54,7 @@
     "Python.popularity.executor": "Run",
     "Python.statistics.executor": "Run",
     "Python.tempo_and_popularity.executor": "Run",
+    "Python.visualization.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -92,7 +90,7 @@
       <workItem from="1774354780341" duration="27671000" />
       <workItem from="1775667113220" duration="5014000" />
       <workItem from="1776099017826" duration="7049000" />
-      <workItem from="1776240590572" duration="8810000" />
+      <workItem from="1776240590572" duration="19649000" />
     </task>
     <task id="LOCAL−00001" summary="Analyzing the data, looking for duplicates, empty cells...">
       <option name="closed" value="true" />
@@ -157,7 +155,14 @@
       <option name="presentableId" value="LOCAL−00009" />
       <updated>1776243025226</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL−00010" summary="pipeline done, excel file with three sheets generated">
+      <option name="closed" value="true" />
+      <created>1776254416216</created>
+      <option name="number" value="LOCAL−00010" />
+      <option name="presentableId" value="LOCAL−00010" />
+      <updated>1776254416216</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,14 +187,16 @@
     <MESSAGE value="bar chart, assessing popularity based on tempo" />
     <MESSAGE value="new etl project started. exploration done in jupyter. started cleaning in cleaning.py" />
     <MESSAGE value="Filtering/grouping and insights done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Filtering/grouping and insights done" />
+    <MESSAGE value="pipeline done, excel file with three sheets generated" />
+    <option name="LAST_COMMIT_MESSAGE" value="pipeline done, excel file with three sheets generated" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/spotify$analysis.coverage" NAME="analysis Coverage Results" MODIFIED="1774615042123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/spotify$app.coverage" NAME="app Coverage Results" MODIFIED="1774358713246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/spotify$tempo_and_popularity.coverage" NAME="tempo_and_popularity Coverage Results" MODIFIED="1774459360615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/spotify$statistics.coverage" NAME="statistics Coverage Results" MODIFIED="1774456963370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/spotify$pipeline.coverage" NAME="pipeline Coverage Results" MODIFIED="1776253814522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/spotify$visualization.coverage" NAME="visualization Coverage Results" MODIFIED="1776333092644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/spotify$pipeline.coverage" NAME="pipeline Coverage Results" MODIFIED="1776347712390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/spotify$cleaning.coverage" NAME="cleaning Coverage Results" MODIFIED="1775667517138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/spotify$popularity.coverage" NAME="popularity Coverage Results" MODIFIED="1774458920570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
