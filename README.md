@@ -73,9 +73,11 @@ Accuracy alone was misleading
 
 After handling imbalance:
 
+Accuracy: 56%
 Recall (popular songs): 0.63
+Precision (popular songs): 0.16
 
-The model can identify a majority of popular songs, but misses a significant portion.
+The model successfully identifies a majority of popular songs, but at the cost of many false positives.
 
 
 ### Key Learnings
@@ -104,6 +106,7 @@ output/
 
 charts
 analysis results
+ml results
 
 
 ### How to Run
